@@ -1,0 +1,12 @@
+version: '3'
+services:
+  web:
+    build:
+      # we have diff dockerfile: name sa we have to follow this way. check in current dir (context value) & refer provided dockerfile
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3002:3000"
+    volumes:
+      - /app/node_modules
+      - .:/app
